@@ -1,0 +1,36 @@
+---
+import  MovieCard  from "../components/MovieCard.svelte";
+
+const movie = {
+  name: 'Inception',
+  description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
+  categories: ["Acción", "Aventura", "Sci-fi"],
+  streamingServices: {
+    "netflix": "https://www.justwatch.com/images/icon/207360008/s100/netflix.%7Bformat%7D/icon.webp",
+    "prime": "https://www.justwatch.com/images/icon/52449861/s100/amazonprimevideo.%7Bformat%7D/icon.webp",
+    "max": "https://images.justwatch.com/icon/305458112/s100/max.%7Bformat%7D/icon.webp",
+    "disney": "https://www.justwatch.com/images/icon/313118777/s100/disneyplus.%7Bformat%7D/icon.webp",
+  },
+  episodesInfo: {
+    "Temporada 1": 12,
+    "Temporada 2": 13,
+    "Temporada 3": 14,
+  },
+  poster: 'https://m.media-amazon.com/images/M/MV5BN2IzYzBiOTQtNGZmMi00NDI5LTgxMzMtN2EzZjA1NjhlOGMxXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg'
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Movies In Astro</h1>
+
+		<MovieCard client:only="svelte" name={movie.name} description={movie.description} poster={movie.poster} categories={movie.categories} streamingServices={movie.streamingServices} ></MovieCard>
+	</body>
+</html>
